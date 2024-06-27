@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Container, Text, VStack, Input, Box, Link, useColorMode, Button } from "@chakra-ui/react";
-import { FaMoon, FaSun } from "react-icons/fa";
+import { Container, Text, VStack, Input, Box, Link } from "@chakra-ui/react";
 
 const Index = () => {
   const [stories, setStories] = useState([]);
   const [filteredStories, setFilteredStories] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const { colorMode, toggleColorMode } = useColorMode();
+  
 
   useEffect(() => {
     fetchTopStories();
@@ -42,9 +41,7 @@ const Index = () => {
   return (
     <Container centerContent maxW="container.md" py={8}>
       <VStack spacing={4} width="100%">
-        <Button onClick={toggleColorMode} alignSelf="flex-end">
-          {colorMode === "light" ? <FaMoon /> : <FaSun />}
-        </Button>
+        
         <Text fontSize="2xl" fontWeight="bold">Top 5 Hacker News Stories</Text>
         <Input
           placeholder="Search stories..."
