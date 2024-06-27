@@ -20,7 +20,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Global
         styles={`
           body {
-            background-color: orange;
+            background-color: #f0f4f8;
           }
         `}
       />

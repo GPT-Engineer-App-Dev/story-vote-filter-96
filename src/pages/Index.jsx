@@ -6,7 +6,6 @@ const Index = () => {
   const [filteredStories, setFilteredStories] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   
-
   useEffect(() => {
     fetchTopStories();
   }, []);
@@ -39,19 +38,20 @@ const Index = () => {
   };
 
   return (
-    <Container centerContent maxW="container.md" py={8}>
+    <Container centerContent maxW="container.md" py={8} px={4}>
       <VStack spacing={4} width="100%">
-        
-        <Text fontSize="2xl" fontWeight="bold">Top 5 Hacker News Stories</Text>
+        <Text fontSize="2xl" fontWeight="bold" color="teal.700">Top 5 Hacker News Stories</Text>
         <Input
           placeholder="Search stories..."
           value={searchTerm}
           onChange={e => setSearchTerm(e.target.value)}
+          borderRadius="md"
+          boxShadow="sm"
         />
         {filteredStories.map(story => (
-          <Box key={story.id} p={4} borderWidth="1px" borderRadius="md" width="100%">
+          <Box key={story.id} p={4} borderWidth="1px" borderRadius="md" width="100%" bg="white" boxShadow="md" mb={4}>
             <Text fontSize="lg" fontWeight="bold">{story.title}</Text>
-            <Link href={story.url} color="teal.500" isExternal>Read more</Link>
+            <Link href={story.url} color="teal.500" isExternal _hover={{ textDecoration: "underline", color: "teal.700" }}>Read more</Link>
             <Text>Upvotes: {story.score}</Text>
           </Box>
         ))}
