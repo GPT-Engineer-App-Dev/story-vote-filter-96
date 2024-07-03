@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, Text, VStack, Input, Box, Link } from "@chakra-ui/react";
+import { Container, Text, VStack, Input, Box, Link, Flex } from "@chakra-ui/react";
 
 const Index = () => {
   const [stories, setStories] = useState([]);
@@ -56,6 +56,10 @@ const Index = () => {
           </Box>
         ))}
       </VStack>
+      <Flex as="footer" width="100%" py={4} justifyContent="space-between" alignItems="center" borderTop="1px solid #eaeaea" mt={8}>
+        <Text fontSize="sm" color="gray.500">© 2023 Your Company. All rights reserved.</Text>
+        <Link href="mailto:contact@yourcompany.com" fontSize="sm" color="teal.500" _hover={{ textDecoration: "underline", color: "teal.700" }}>Contact Us</Link>
+      </Flex>
     </Container>
   );
 };
